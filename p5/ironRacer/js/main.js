@@ -10,6 +10,8 @@ function setup() {
 }
 
 function draw() {
+  angleMode(DEGREES);
+
   console.log("draw");
   background("white");
   game.draw();
