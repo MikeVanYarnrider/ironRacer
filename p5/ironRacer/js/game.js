@@ -46,27 +46,24 @@ class Game {
 
       // collision detection
       if (this.obstacle.sprite1.displace(this.player.carSprite)) {
-        console.log("hit");
       }
       if (this.obstacle.sprite2.displace(this.player.carSprite)) {
-        console.log("hit");
       }
       if (this.obstacle.sprite3.displace(this.player.carSprite)) {
-        console.log("hit");
+      }
+      if (this.obstacle.sprite4.displace(this.player.carSprite)) {
+      }
+      if (this.obstacle.sprite5.displace(this.player.carSprite)) {
       }
 
       // ----BORDER COLLISION
       if (this.obstacle.spriteBorderRight.displace(this.player.carSprite)) {
-        console.log("hit");
       }
       if (this.obstacle.spriteBorderLeft.displace(this.player.carSprite)) {
-        console.log("hit");
       }
       if (this.obstacle.spriteBorderTop.displace(this.player.carSprite)) {
-        console.log("hit");
       }
       if (this.obstacle.spriteBorderBottom.displace(this.player.carSprite)) {
-        console.log("hit");
       }
     }
 
