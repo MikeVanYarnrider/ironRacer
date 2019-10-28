@@ -3,37 +3,23 @@ class Player {
     // TODO fix width/height according to canvas
     this.xPlayer = 1000 / 2;
     this.yPlayer = 1000 / 2;
-    console.log(this.xPlayer);
+    // this.speed = 0;
+    this.rotation = 0;
   }
 
-  preload() {
-    this.carImg = loadImage("../assets/car1.png");
-  }
+  preload() {}
 
   setup() {
-    // car size
-    this.xCar = 50; //this.carImg.width / 14;
-    this.yCar = 50; //this.carImg.height / 14;
-
     // sprite setup
-
-    this.carSprite = createSprite(
-      this.xPlayer,
-      this.yPlayer,
-      this.xCar,
-      this.yCar
-    );
-
-    // ads image to sprite
-    this.carSprite.addImage(this.carImg);
-    // this.carSprite.width(20);
-    // this.carRotation = -90;
-    // this.carMaxSpeed = 1.2;
-    // this.carFriction = 0.03;
-    // console.log(this.carSprite);
+    this.carImg = loadImage("../assets/car1.png");
+    this.carSprite = createSprite(0, 0, 50, 50);
+    this.carSprite.addImage("normal", this.carImg);
   }
 
   draw() {
+    translate(this.xPlayer, this.yPlayer);
+    console.log(this.rotation);
+    rotate(this.rotation);
     drawSprites();
   }
 }
