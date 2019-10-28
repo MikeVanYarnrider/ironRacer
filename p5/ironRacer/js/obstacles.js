@@ -5,6 +5,15 @@ class Obstacles {
     this.yObstacle = 100;
   }
   setup() {
+    // start-finish line
+    this.start = createSprite(500, -15, 200, 1);
+    this.start.setCollider("rectangle", 0, 0, 200, 0.1);
+    this.start.debug = true;
+    this.finish = createSprite(500, 0, 200, 1);
+    this.finish.setCollider("rectangle", 0, 0, 200, 0.1);
+    this.finish.debug = true;
+
+    // -----COLLISION BOXES
     this.sprite1 = createSprite(100, 0, 600, 200);
     this.sprite1.setCollider("rectangle", 0, 0, 600, 200);
     this.sprite1.debug = true;
@@ -32,7 +41,7 @@ class Obstacles {
     this.spriteBorderLeft.setCollider("rectangle", 0, 0, 25, 800);
     this.spriteBorderLeft.debug = true;
     this.spriteBorderBottom = createSprite(0, 400, 1200, 25);
-    this.spriteBorderBottom.setCollider("rectangle", 0, 0, 1200, 2);
+    this.spriteBorderBottom.setCollider("rectangle", 0, 0, 1200, 25);
     this.spriteBorderBottom.debug = true;
   }
 

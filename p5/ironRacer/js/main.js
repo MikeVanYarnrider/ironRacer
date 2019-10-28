@@ -6,14 +6,18 @@ function preload() {
 function setup() {
   console.log("setup");
   createCanvas(WIDTH, HEIGHT);
+
+  // function call
   game.setup();
+  game.raceTime();
 }
 
 function draw() {
   angleMode(DEGREES);
-
   console.log("draw");
   background("white");
+
+  // function call
   game.draw();
 }
 
