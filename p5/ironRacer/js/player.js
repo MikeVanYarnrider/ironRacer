@@ -12,7 +12,7 @@ class Player {
   setup() {
     // player 1 car sprite setup
     this.carImg = loadImage("../assets/car1.png");
-    this.carSprite = createSprite(450, 0, 50, 50);
+    this.carSprite = createSprite(350, 0, 50, 50);
     this.carSprite.addImage("normal", this.carImg);
     this.carSprite.setCollider("rectangle", 0, -10, 5, 5);
     this.carSprite.debug = true;

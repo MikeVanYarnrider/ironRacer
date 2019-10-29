@@ -1,5 +1,5 @@
-const WIDTH = 1200;
-const HEIGHT = 800;
+const WIDTH = 900;
+const HEIGHT = 600;
 
 class Game {
   constructor() {
@@ -48,12 +48,7 @@ class Game {
     if (keyDown(39)) this.player.carSprite.rotation += 5;
 
     // move forward
-    // if (
-    //   this.player.carSprite.position.x < 600 &&
-    //   this.player.carSprite.position.y < 400 &&
-    //   this.player.carSprite.position.x > -600 &&
-    //   this.player.carSprite.position.y > -400
-    // ) {
+
     if (keyDown(38)) {
       this.player.carSprite.position.x +=
         sin(this.player.carSprite.rotation) * this.player.velocity;
@@ -85,9 +80,9 @@ class Game {
 
     this.obstacle.sprite3.displace(this.player.carSprite);
 
-    this.obstacle.sprite4.displace(this.player.carSprite);
+    // this.obstacle.sprite4.displace(this.player.carSprite);
 
-    this.obstacle.sprite5.displace(this.player.carSprite);
+    // this.obstacle.sprite5.displace(this.player.carSprite);
 
     // ----BORDER COLLISION
     this.obstacle.spriteBorderRight.displace(this.player.carSprite);
