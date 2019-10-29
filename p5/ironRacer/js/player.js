@@ -1,8 +1,8 @@
 class Player {
   constructor() {
     // TODO fix width/height according to canvas
-    this.xPlayer = WIDTH / 2;
-    this.yPlayer = HEIGHT / 2;
+    this.xPlayer = WIDTH / 4;
+    this.yPlayer = HEIGHT / 4;
     this.velocity = 7;
     this.rotation = 0;
   }
