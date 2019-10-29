@@ -8,6 +8,8 @@ class Game {
     this.obstacle = new Obstacles();
     this.startTime = [];
     this.lapTime = [];
+    this.maxLaps = 5;
+    this.raceTime = "00:00";
   }
 
   preload() {
@@ -23,13 +25,6 @@ class Game {
     this.player.setup();
   }
 
-  raceTime() {
-    if (keyDown(38)) {
-      this.startTime.push(frameCount);
-      // console.log(startTime);
-    }
-  }
-
   draw() {
     // background
     this.background.draw();
@@ -39,46 +34,54 @@ class Game {
       (this.lapTime[this.lapTime.length - 1] - this.startTime) /
       60
     ).toFixed(2);
+    if (this.startTime > 0) {
+      this.raceTime = ((frameCount - this.startTime) / 60).toFixed(2);
+    }
     this.lapCount = this.lapTime.length;
-    // console.log(this.lapCount);
+
+    // console.log("-----Lap: " + this.lapCount);
     // console.log(this.finalTime);
     //
 
     this.player.draw();
-    // this.obstacle.draw();
 
-    // car navigation
-    // rotate left
-    if (keyDown(37)) this.player.carSprite.rotation -= 5;
+    // navigation
+    if (this.lapCount < this.maxLaps) {
+      // rotate left
+      if (keyDown(37)) this.player.carSprite.rotation -= 5;
 
-    // rotate right
-    if (keyDown(39)) this.player.carSprite.rotation += 5;
+      // rotate right
+      if (keyDown(39)) this.player.carSprite.rotation += 5;
 
-    // move forward
+      // move forward
 
-    if (keyDown(38)) {
-      this.player.carSprite.position.x +=
-        sin(this.player.carSprite.rotation) * this.player.velocity;
-      this.player.carSprite.position.y -=
-        cos(this.player.carSprite.rotation) * this.player.velocity;
+      if (keyDown(38)) {
+        this.player.carSprite.position.x +=
+          sin(this.player.carSprite.rotation) * this.player.velocity;
+        this.player.carSprite.position.y -=
+          cos(this.player.carSprite.rotation) * this.player.velocity;
+      }
+
+      // start-finish line
+      if (
+        this.obstacle.start.overlap(this.player.carSprite) &&
+        this.startTime.length < 1
+      ) {
+        // console.log("----START----");
+        this.startTime.push(frameCount);
+        console.log(this.startTime);
+      }
+      if (this.obstacle.finish.overlap(this.player.carSprite)) {
+        // console.log("----FINISH----");
+        this.lapTime.push(frameCount);
+        console.log(this.lapTime);
+        console.log(this.finalTime);
+      }
+      lapCounter(this.lapCount, this.maxLaps);
+      timeCounter(this.raceTime);
     }
 
-    // start-finish line
-    if (
-      this.obstacle.start.overlap(this.player.carSprite) &&
-      this.startTime.length < 1
-    ) {
-      console.log("----START----");
-      this.startTime.push(frameCount);
-      console.log(this.startTime);
-    }
-    if (this.obstacle.finish.overlap(this.player.carSprite)) {
-      console.log("----FINISH----");
-      this.lapTime.push(frameCount);
-      console.log(this.lapTime);
-    }
-
-    // end of race
+    // console.log(this.raceTime);
 
     // collision detection
     this.obstacle.sprite1.displace(this.player.carSprite);

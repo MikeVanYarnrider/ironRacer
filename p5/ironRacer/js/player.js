@@ -16,6 +16,7 @@ class Player {
     this.carSprite.addImage("normal", this.carImg);
     this.carSprite.setCollider("rectangle", 0, -10, 5, 5);
     this.carSprite.debug = true;
+    this.carSprite.friction = 0.1;
   }
 
   draw() {

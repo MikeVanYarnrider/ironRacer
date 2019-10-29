@@ -4,12 +4,15 @@
     <title>IronRacer</title>
     <!-- link styles -->
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Racing+Sans+One&display=swap"
+      rel="stylesheet"
+    />
     <!-- remote p5.js library location -->
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.min.js"
     ></script>
-
     <!-- remote p5.play library location -->
     <script
       type="text/javascript"
@@ -17,7 +20,20 @@
     ></script>
   </head>
   <body>
+    <div class="container" id="playerOne">
+      <h1>IRONRACER</h1>
+      <div class="hud" id="laps">
+        <h2>Laps:</h2>
+        <p>0/5</p>
+      </div>
+      <div class="hud" id="time">
+        <h2>Time:</h2>
+        <p>00:00</p>
+      </div>
+    </div>
+
     <!-- scripts -->
+    <script src="/w3-ironRace/p5/ironRacer/js/style.js"></script>
     <script src="/w3-ironRace/p5/ironRacer/js/player.js"></script>
     <script src="/w3-ironRace/p5/ironRacer/js/obstacles.js"></script>
     <script src="/w3-ironRace/p5/ironRacer/js/background.js"></script>

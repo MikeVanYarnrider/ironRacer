@@ -9,7 +9,7 @@ function setup() {
 
   // function call
   game.setup();
-  game.raceTime();
+  // game.raceTime();
 }
 
 function draw() {

@@ -14,5 +14,37 @@ body {
   align-items: center;
 
   /* bg color */
-  background-color: #313131;
+  background-color: #27ae60;
+}
+
+h1 {
+  text-align: right;
+  margin-left: 40px;
+  font-size: 50px;
+}
+
+.container {
+  height: 600px;
+  background-color: #27ae60;
+  width: 100vw;
+  font-family: "Racing Sans One", cursive;
+  color: #684831;
+  padding: 0 20px;
+  /* color: #e26e20; */
+}
+
+.hud {
+  background-color: #222222;
+  border-radius: 20px;
+  color: yellow;
+  padding: 12px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.hud p {
+  font-size: 50px;
+  margin: 0;
 }
