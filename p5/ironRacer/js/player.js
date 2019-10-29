@@ -7,9 +7,9 @@ class Player {
     this.rotation = 0;
   }
 
-  preload() {}
-
   setup() {
+    // map background
+
     // player 1 car sprite setup
     this.carImg = loadImage("../assets/car1.png");
     this.carSprite = createSprite(350, 0, 50, 50);

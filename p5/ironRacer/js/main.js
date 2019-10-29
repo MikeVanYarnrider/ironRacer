@@ -13,9 +13,11 @@ function setup() {
 }
 
 function draw() {
+  // clear();
   angleMode(DEGREES);
   console.log("draw");
-  background("white");
+
+  // background("white");
 
   // function call
   game.draw();

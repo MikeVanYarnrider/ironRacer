@@ -4,6 +4,7 @@ const HEIGHT = 600;
 class Game {
   constructor() {
     this.player = new Player(WIDTH / 2, HEIGHT / 2);
+    this.background = new Background();
     this.obstacle = new Obstacles();
     this.startTime = [];
     this.lapTime = [];
@@ -11,13 +12,15 @@ class Game {
 
   preload() {
     //
-    this.player.preload();
+    // this.player.preload();
+    this.background.preload();
+    this.obstacle.preload();
   }
 
   setup() {
     //
-    this.player.setup();
     this.obstacle.setup();
+    this.player.setup();
   }
 
   raceTime() {
@@ -28,6 +31,9 @@ class Game {
   }
 
   draw() {
+    // background
+    this.background.draw();
+
     // Racing stats
     this.finalTime = (
       (this.lapTime[this.lapTime.length - 1] - this.startTime) /
@@ -37,6 +43,7 @@ class Game {
     // console.log(this.lapCount);
     // console.log(this.finalTime);
     //
+
     this.player.draw();
     // this.obstacle.draw();
 
@@ -77,12 +84,6 @@ class Game {
     this.obstacle.sprite1.displace(this.player.carSprite);
 
     this.obstacle.sprite2.displace(this.player.carSprite);
-
-    this.obstacle.sprite3.displace(this.player.carSprite);
-
-    // this.obstacle.sprite4.displace(this.player.carSprite);
-
-    // this.obstacle.sprite5.displace(this.player.carSprite);
 
     // ----BORDER COLLISION
     this.obstacle.spriteBorderRight.displace(this.player.carSprite);
