@@ -1,7 +1,13 @@
-function lapCounter(lapCount, maxLaps) {
-  document.querySelector("#laps p").innerText = lapCount + 1 + "/" + maxLaps;
+function lapCounter(playerOneLapCount, playerTwoLapCount, maxLaps) {
+  document.querySelector("#onelaps p").innerText =
+    playerOneLapCount + "/" + maxLaps;
+  document.querySelector("#twolaps p").innerText =
+    playerTwoLapCount + "/" + maxLaps;
 }
 
-function timeCounter(raceTime) {
-  document.querySelector("#time p").innerText = raceTime;
+function timeCounter(pOneRaceTime, pTwoRaceTime, pOneTotalTime, pTwoTotalTime) {
+  document.querySelector("#oneLapTime").innerText = pOneRaceTime.toFixed(2);
+  document.querySelector("#twoLapTime").innerText = pTwoRaceTime.toFixed(2);
+  document.querySelector("#oneTime").innerText = pOneTotalTime;
+  document.querySelector("#twoTime").innerText = pTwoTotalTime;
 }
