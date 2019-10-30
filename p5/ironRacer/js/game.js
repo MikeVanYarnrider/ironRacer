@@ -4,6 +4,7 @@ const xPFive = 0;
 const yPFive = 0;
 let pOneCounter = 0;
 let pTwoCounter = 0;
+
 class Game {
   constructor() {
     this.playerOne = new Player(1);
@@ -60,7 +61,6 @@ class Game {
       if (keyDown(39)) this.playerOne.carSprite.rotation += 5;
 
       // move forward
-
       if (keyDown(38)) {
         this.playerOne.carSprite.position.x +=
           sin(this.playerOne.carSprite.rotation) * this.playerOne.velocity;
@@ -99,7 +99,6 @@ class Game {
       if (keyDown(68)) this.playerTwo.carSprite.rotation += 5;
 
       // move forward
-
       if (keyDown(87)) {
         this.playerTwo.carSprite.position.x +=
           sin(this.playerTwo.carSprite.rotation) * this.playerTwo.velocity;
@@ -142,33 +141,14 @@ class Game {
       this.maxLaps
     );
 
-    // if (this.playerOne.lapCount > 0 || this.playerTwo.lapCount > 0) {
-    //   lapTimeCounter(
-    //     this.playerOne.lapTime[this.playerOne.lapTime.length - 1],
-    //     this.playerOne.lapTime[this.playerOne.lapTime.length - 2],
-    //     this.playerTwo.lapTime[this.playerTwo.lapTime.length - 1],
-    //     this.playerTwo.lapTime[this.playerTwo.lapTime.length - 2]
-    //   );
-    // }
-
-    // function lapTimeCounter(
-    //   pOneLastLapTime,
-    //   pOneLastLastLapTime,
-    //   pTwoLastLapTime,
-    //   pTwoLastLastLapTime
-    // ) {
-    //   let singleLapOne = pOneLastLapTime - pOneLastLastLapTime;
-    //   console.log(singleLapOne);
-    //   let singleLapTwo = pTwoLastLapTime - pTwoLastLastLapTime;
-    //   console.log(singleLapTwo);
-    // }
-
     // collision detection
     this.obstacle.sprite1.displace(this.playerOne.carSprite);
     this.obstacle.sprite2.displace(this.playerOne.carSprite);
+    this.obstacle.sprite3.displace(this.playerOne.carSprite);
 
     this.obstacle.sprite1.displace(this.playerTwo.carSprite);
     this.obstacle.sprite2.displace(this.playerTwo.carSprite);
+    this.obstacle.sprite3.displace(this.playerTwo.carSprite);
 
     // ----BORDER COLLISION
     this.obstacle.spriteBorderRight.displace(this.playerOne.carSprite);
@@ -184,6 +164,20 @@ class Game {
     this.playerTwo.carSprite.displace(this.playerOne.carSprite);
 
     this.playerOne.carSprite.displace(this.playerTwo.carSprite);
+
+    // ----BONUS OBSTACLES
+    if (this.obstacle.oil1.overlap(this.playerOne.carSprite)) {
+      this.playerOne.velocity = 2;
+    }
+    if (this.obstacle.oil1.overlap(this.playerTwo.carSprite)) {
+      this.playerTwo.velocity = 2;
+    }
+    if (this.obstacle.boost1.overlap(this.playerOne.carSprite)) {
+      this.playerOne.velocity = 9;
+    }
+    if (this.obstacle.boost1.overlap(this.playerTwo.carSprite)) {
+      this.playerTwo.velocity = 9;
+    }
     drawSprites();
   }
 }
