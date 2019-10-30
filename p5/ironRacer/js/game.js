@@ -2,7 +2,8 @@ const WIDTH = 900;
 const HEIGHT = 600;
 const xPFive = 0;
 const yPFive = 0;
-
+let pOneCounter = 0;
+let pTwoCounter = 0;
 class Game {
   constructor() {
     this.playerOne = new Player(1);
@@ -69,15 +70,24 @@ class Game {
 
       // PLAYER 1 ---- start-finish line
       if (
-        this.obstacle.start.overlap(this.playerOne.carSprite) &&
-        this.startTime.length < 1
+        this.startTime.length < 1 &&
+        this.obstacle.start.overlap(this.playerOne.carSprite)
       ) {
-        // console.log("----START----");
+        console.log("----P1 START----");
         this.startTime.push(frameCount);
+        // this.obstacle.start.visible = false;
       }
-      if (this.obstacle.finish.overlap(this.playerOne.carSprite)) {
-        // console.log("----FINISH----");
+      if (
+        this.obstacle.finish.overlap(this.playerOne.carSprite) &&
+        pOneCounter < 1
+      ) {
+        pOneCounter++;
+        console.log("----P1 FINISH----");
+        console.log(this.playerOne.lapTime);
         this.playerOne.lapTime.push(frameCount);
+        setTimeout(function() {
+          pOneCounter = 0;
+        }, 200);
       }
     }
 
@@ -101,13 +111,22 @@ class Game {
         this.obstacle.start.overlap(this.playerTwo.carSprite) &&
         this.startTime.length < 1
       ) {
-        // console.log("----START----");
+        console.log("----P2 START----");
         this.startTime.push(frameCount);
+        // this.obstacle.start.visible = false;
+
         console.log(this.startTime);
       }
-      if (this.obstacle.finish.overlap(this.playerTwo.carSprite)) {
-        // console.log("----FINISH----");
+      if (
+        this.obstacle.finish.overlap(this.playerTwo.carSprite) &&
+        pTwoCounter < 1
+      ) {
+        console.log("----P2 FINISH----");
+        pTwoCounter++;
         this.playerTwo.lapTime.push(frameCount);
+        setTimeout(function() {
+          pTwoCounter = 0;
+        }, 200);
       }
     }
     lapCounter(this.playerOne.lapCount, this.playerTwo.lapCount, this.maxLaps);
@@ -142,6 +161,8 @@ class Game {
 
     this.obstacle.spriteBorderBottom.displace(this.playerTwo.carSprite);
 
+    this.playerTwo.carSprite.displace(this.playerOne.carSprite);
+    this.playerOne.carSprite.displace(this.playerTwo.carSprite);
     drawSprites();
   }
 }
