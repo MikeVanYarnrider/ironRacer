@@ -20,10 +20,10 @@ class Obstacles {
     this.start = createSprite(365, -22, 150, 1);
     this.start.addImage("start", this.startImg);
     this.start.setCollider("rectangle", 0, 0, 300, 0.01);
-    this.start.debug = true;
-    this.finish = createSprite(365, 5, 150, 1);
-    this.finish.setCollider("rectangle", 0, 15, 300, 0.01);
-    this.finish.debug = true;
+    // this.start.debug = true;
+    // this.finish = createSprite(365, 5, 150, 1);
+    // this.finish.setCollider("rectangle", 0, 15, 300, 0.01);
+    // this.finish.debug = true;
 
     // -----MAP COLLIDER
     this.sprite1 = createSprite(100, 0, 400, 200);

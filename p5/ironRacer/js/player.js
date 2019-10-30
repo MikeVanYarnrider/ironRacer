@@ -27,7 +27,7 @@ class Player {
       this.carSprite.addImage("p2", this.carImg);
       this.carSprite.setCollider("rectangle", 0, 0, 15, 30);
     }
-    this.carSprite.debug = true;
+    // this.carSprite.debug = true;
   }
 
   draw() {

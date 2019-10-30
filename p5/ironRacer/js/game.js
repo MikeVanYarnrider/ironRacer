@@ -52,7 +52,7 @@ class Game {
       60;
 
     // Player 1 navigation
-    if (this.playerOne.lapCount < this.maxLaps) {
+    if (this.playerOne.lapCount - 1 < this.maxLaps) {
       // rotate left
       if (keyDown(37)) this.playerOne.carSprite.rotation -= 5;
 
@@ -78,7 +78,7 @@ class Game {
         // this.obstacle.start.visible = false;
       }
       if (
-        this.obstacle.finish.overlap(this.playerOne.carSprite) &&
+        this.obstacle.start.overlap(this.playerOne.carSprite) &&
         pOneCounter < 1
       ) {
         pOneCounter++;
@@ -92,7 +92,7 @@ class Game {
     }
 
     // Player 2 navigation
-    if (this.playerTwo.lapCount < this.maxLaps) {
+    if (this.playerTwo.lapCount - 1 < this.maxLaps) {
       if (keyDown(65)) this.playerTwo.carSprite.rotation -= 5;
 
       // rotate right
@@ -118,7 +118,7 @@ class Game {
         console.log(this.startTime);
       }
       if (
-        this.obstacle.finish.overlap(this.playerTwo.carSprite) &&
+        this.obstacle.start.overlap(this.playerTwo.carSprite) &&
         pTwoCounter < 1
       ) {
         console.log("----P2 FINISH----");
@@ -129,6 +129,7 @@ class Game {
         }, 200);
       }
     }
+
     lapCounter(this.playerOne.lapCount, this.playerTwo.lapCount, this.maxLaps);
     timeCounter(
       this.pOneFinalTime,
@@ -139,29 +140,24 @@ class Game {
 
     // collision detection
     this.obstacle.sprite1.displace(this.playerOne.carSprite);
-
     this.obstacle.sprite2.displace(this.playerOne.carSprite);
-    this.obstacle.sprite1.displace(this.playerTwo.carSprite);
 
+    this.obstacle.sprite1.displace(this.playerTwo.carSprite);
     this.obstacle.sprite2.displace(this.playerTwo.carSprite);
 
     // ----BORDER COLLISION
     this.obstacle.spriteBorderRight.displace(this.playerOne.carSprite);
-
     this.obstacle.spriteBorderLeft.displace(this.playerOne.carSprite);
-
     this.obstacle.spriteBorderTop.displace(this.playerOne.carSprite);
-
     this.obstacle.spriteBorderBottom.displace(this.playerOne.carSprite);
+
     this.obstacle.spriteBorderRight.displace(this.playerTwo.carSprite);
-
     this.obstacle.spriteBorderLeft.displace(this.playerTwo.carSprite);
-
     this.obstacle.spriteBorderTop.displace(this.playerTwo.carSprite);
-
     this.obstacle.spriteBorderBottom.displace(this.playerTwo.carSprite);
 
     this.playerTwo.carSprite.displace(this.playerOne.carSprite);
+
     this.playerOne.carSprite.displace(this.playerTwo.carSprite);
     drawSprites();
   }
