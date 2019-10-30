@@ -11,7 +11,7 @@ class Game {
     this.background = new Background();
     this.obstacle = new Obstacles();
     this.startTime = [];
-    this.maxLaps = 5;
+    this.maxLaps = 3;
   }
 
   preload() {

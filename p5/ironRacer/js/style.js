@@ -1,11 +1,15 @@
 function lapCounter(playerOneLapCount, playerTwoLapCount, maxLaps) {
-  if (playerOneLapCount <= maxLaps) {
+  if (playerOneLapCount < maxLaps) {
     document.querySelector("#onelaps p").innerText =
       playerOneLapCount + "/" + maxLaps;
+  } else {
+    document.querySelector("#onelaps p").innerText = "Last Lap";
   }
-  if (playerTwoLapCount <= maxLaps) {
+  if (playerTwoLapCount < maxLaps) {
     document.querySelector("#twolaps p").innerText =
       playerTwoLapCount + "/" + maxLaps;
+  } else {
+    document.querySelector("#twolaps p").innerText = "Last Lap";
   }
 }
 
