@@ -83,7 +83,7 @@ class Game {
       ) {
         pOneCounter++;
         console.log("----P1 FINISH----");
-        console.log(this.playerOne.lapTime);
+        // console.log(this.playerOne.lapTime);
         this.playerOne.lapTime.push(frameCount);
         setTimeout(function() {
           pOneCounter = 0;
@@ -115,7 +115,7 @@ class Game {
         this.startTime.push(frameCount);
         // this.obstacle.start.visible = false;
 
-        console.log(this.startTime);
+        // console.log(this.startTime);
       }
       if (
         this.obstacle.start.overlap(this.playerTwo.carSprite) &&
@@ -131,12 +131,37 @@ class Game {
     }
 
     lapCounter(this.playerOne.lapCount, this.playerTwo.lapCount, this.maxLaps);
+
     timeCounter(
       this.pOneFinalTime,
       this.pTwoFinalTime,
       this.playerOne.raceTime,
-      this.playerTwo.raceTime
+      this.playerTwo.raceTime,
+      this.playerOne.lapCount,
+      this.playerTwo.lapCount,
+      this.maxLaps
     );
+
+    // if (this.playerOne.lapCount > 0 || this.playerTwo.lapCount > 0) {
+    //   lapTimeCounter(
+    //     this.playerOne.lapTime[this.playerOne.lapTime.length - 1],
+    //     this.playerOne.lapTime[this.playerOne.lapTime.length - 2],
+    //     this.playerTwo.lapTime[this.playerTwo.lapTime.length - 1],
+    //     this.playerTwo.lapTime[this.playerTwo.lapTime.length - 2]
+    //   );
+    // }
+
+    // function lapTimeCounter(
+    //   pOneLastLapTime,
+    //   pOneLastLastLapTime,
+    //   pTwoLastLapTime,
+    //   pTwoLastLastLapTime
+    // ) {
+    //   let singleLapOne = pOneLastLapTime - pOneLastLastLapTime;
+    //   console.log(singleLapOne);
+    //   let singleLapTwo = pTwoLastLapTime - pTwoLastLastLapTime;
+    //   console.log(singleLapTwo);
+    // }
 
     // collision detection
     this.obstacle.sprite1.displace(this.playerOne.carSprite);
