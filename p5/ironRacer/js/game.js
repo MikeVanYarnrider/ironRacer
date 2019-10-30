@@ -5,8 +5,8 @@ const yPFive = 0;
 
 class Game {
   constructor() {
-    this.playerOne = new Player(WIDTH / 2, HEIGHT / 2);
-    this.playerTwo = new Player(WIDTH / 2, HEIGHT / 2);
+    this.playerOne = new Player(1);
+    this.playerTwo = new Player(2);
     this.background = new Background();
     this.obstacle = new Obstacles();
     this.startTime = [];
