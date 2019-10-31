@@ -13,7 +13,7 @@ class Background {
   }
 
   setup() {
-    // this.song.loop();
+    this.song.loop();
   }
 
   draw() {
