@@ -4,7 +4,6 @@ const xPFive = 0;
 const yPFive = 0;
 let pOneCounter = 0;
 let pTwoCounter = 0;
-let timer = 5;
 
 class Game {
   constructor() {
@@ -13,7 +12,7 @@ class Game {
     this.background = new Background();
     this.obstacle = new Obstacles();
     this.startTime = [];
-    this.maxLaps = 3;
+    this.maxLaps = 5;
   }
 
   preload() {
