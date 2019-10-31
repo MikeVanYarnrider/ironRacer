@@ -55,18 +55,31 @@ class Game {
 
     // Player 1 navigation
     if (this.playerOne.lapCount - 1 < this.maxLaps) {
-      // rotate left
-      if (keyDown(37)) this.playerOne.carSprite.rotation -= 5;
-
-      // rotate right
-      if (keyDown(39)) this.playerOne.carSprite.rotation += 5;
-
       // move forward
       if (keyDown(38)) {
         this.playerOne.carSprite.position.x +=
           sin(this.playerOne.carSprite.rotation) * this.playerOne.velocity;
         this.playerOne.carSprite.position.y -=
           cos(this.playerOne.carSprite.rotation) * this.playerOne.velocity;
+      }
+      if (keyDown(40)) {
+        this.playerOne.carSprite.position.x +=
+          sin(this.playerOne.carSprite.rotation) * -this.playerOne.velocity;
+        this.playerOne.carSprite.position.y -=
+          cos(this.playerOne.carSprite.rotation) * -this.playerOne.velocity;
+      }
+      if (keyDown(38)) {
+        // rotate left
+        if (keyDown(37)) this.playerOne.carSprite.rotation -= 5;
+        // rotate right
+        if (keyDown(39)) this.playerOne.carSprite.rotation += 5;
+      }
+
+      if (keyDown(40)) {
+        // rotate left
+        if (keyDown(37)) this.playerOne.carSprite.rotation += 5;
+        // rotate right
+        if (keyDown(39)) this.playerOne.carSprite.rotation -= 5;
       }
 
       // PLAYER 1 ---- start-finish line
@@ -94,11 +107,6 @@ class Game {
 
     // Player 2 navigation
     if (this.playerTwo.lapCount - 1 < this.maxLaps) {
-      if (keyDown(65)) this.playerTwo.carSprite.rotation -= 5;
-
-      // rotate right
-      if (keyDown(68)) this.playerTwo.carSprite.rotation += 5;
-
       // move forward
       if (keyDown(87)) {
         this.playerTwo.carSprite.position.x +=
@@ -106,6 +114,27 @@ class Game {
         this.playerTwo.carSprite.position.y -=
           cos(this.playerTwo.carSprite.rotation) * this.playerTwo.velocity;
       }
+
+      if (keyDown(83)) {
+        this.playerTwo.carSprite.position.x +=
+          sin(this.playerTwo.carSprite.rotation) * -this.playerTwo.velocity;
+        this.playerTwo.carSprite.position.y -=
+          cos(this.playerTwo.carSprite.rotation) * -this.playerTwo.velocity;
+      }
+      if (keyDown(87)) {
+        // rotate left
+        if (keyDown(65)) this.playerTwo.carSprite.rotation -= 5;
+        // rotate right
+        if (keyDown(68)) this.playerTwo.carSprite.rotation += 5;
+      }
+
+      if (keyDown(83)) {
+        if (keyDown(65)) this.playerTwo.carSprite.rotation += 5;
+
+        // rotate right
+        if (keyDown(68)) this.playerTwo.carSprite.rotation -= 5;
+      }
+
       // PLAYER 2 ---- start-finish line
       if (
         this.obstacle.start.overlap(this.playerTwo.carSprite) &&

@@ -17,8 +17,6 @@ class Background {
   }
 
   draw() {
-    // Background sound
-
     // Background Images
     image(this.soilImg, 0, 0, 450, 300);
     image(this.soilImg, 0, 300, 450, 300);
