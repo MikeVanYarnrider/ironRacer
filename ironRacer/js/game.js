@@ -25,6 +25,7 @@ class Game {
     this.obstacle.setup();
     this.playerOne.setup();
     this.playerTwo.setup();
+    this.background.setup();
   }
 
   draw() {
