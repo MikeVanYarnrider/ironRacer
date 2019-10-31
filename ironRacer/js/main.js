@@ -3,6 +3,7 @@ let mode = 2;
 
 function preload() {
   game.preload();
+  background.preload();
   console.log("preload");
 }
 
