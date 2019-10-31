@@ -31,3 +31,9 @@ function timeCounter(
     document.querySelector("#twoTime").innerText = pTwoTotalTime;
   }
 }
+
+// Startscreen
+document.querySelector("button").onclick = function() {
+  console.log("pressed");
+  document.getElementById("overlay").style.display = "none";
+};

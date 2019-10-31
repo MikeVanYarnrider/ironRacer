@@ -15,6 +15,7 @@ body {
 
   /* bg color */
   background-color: #27ae60;
+  font-family: "Racing Sans One";
 }
 
 h1 {
@@ -27,7 +28,6 @@ h1 {
   height: 600px;
   background-color: #27ae60;
   width: 100vw;
-  font-family: "Racing Sans One", cursive;
   color: #684831;
   padding: 0 20px;
   /* color: #e26e20; */
@@ -47,4 +47,37 @@ h1 {
 .hud p {
   font-size: 32px;
   margin: 0;
+}
+
+#overlay {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  /* padding: 100px; */
+}
+
+#overlay h1 {
+  margin-top: 50px;
+  margin-right: 100px;
+}
+
+#overlay button {
+  /* align-self: center; */
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
 }
