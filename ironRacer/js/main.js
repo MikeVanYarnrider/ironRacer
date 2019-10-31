@@ -1,25 +1,18 @@
 function preload() {
-  console.log("preload");
   game.preload();
+  console.log("preload");
 }
 
 function setup() {
-  console.log("setup");
   createCanvas(WIDTH, HEIGHT);
-
-  // function call
   game.setup();
+  console.log("setup");
 }
 
 function draw() {
-  // clear();
   angleMode(DEGREES);
-  console.log("draw");
-
-  // background("white");
-
-  // function call
   game.draw();
+  console.log("draw");
 }
 
 // starting game

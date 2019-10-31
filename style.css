@@ -66,15 +66,49 @@ h1 {
 
 #overlay h1 {
   margin-top: 50px;
-  margin-right: 100px;
 }
 
 #overlay button {
-  /* align-self: center; */
+  margin: 50px 0;
+  padding: 30px 100px;
+  border-color: yellow;
+  border-width: 5px;
+  background-color: black;
+  color: yellow;
+  font-size: 50px;
+}
+
+#overlay button:hover {
+  margin: 50px 0;
+  padding: 30px 100px;
+  border-color: black;
+  border-width: 5px;
+  background-color: yellow;
+  color: black;
+  font-size: 50px;
+}
+
+#overlay h2,
+p {
+  color: white;
+  text-align: center;
+}
+
+#overlay img {
+  width: 50px;
 }
 
 .flex {
   display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.space-between {
+  margin: 0 50px;
+  justify-content: space-between;
 }
 
 .center {

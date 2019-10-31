@@ -36,4 +36,5 @@ function timeCounter(
 document.querySelector("button").onclick = function() {
   console.log("pressed");
   document.getElementById("overlay").style.display = "none";
+  // this.background.btnEffect.start();
 };

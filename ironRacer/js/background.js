@@ -2,18 +2,21 @@ class Background {
   constructor() {
     //
     this.soilImg;
-    this.song;
+    this.bgSong;
+    // this.btnEffect;
   }
 
   preload() {
     // img
     this.soilImg = loadImage("ironRacer/assets/soil450x300.png");
     // music
-    this.song = loadSound("ironRacer/assets/catchy.ogg");
+    this.bgSong = loadSound("ironRacer/assets/catchy.ogg");
+    // this.btnEffect = loadSound("ironRacer/assets/carstartgarage.mp3");
   }
 
   setup() {
-    this.song.loop();
+    this.bgSong.loop();
+    // this.btnEffect.start();
   }
 
   draw() {

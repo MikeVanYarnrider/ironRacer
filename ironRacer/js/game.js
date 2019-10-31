@@ -4,6 +4,7 @@ const xPFive = 0;
 const yPFive = 0;
 let pOneCounter = 0;
 let pTwoCounter = 0;
+let timer = 5;
 
 class Game {
   constructor() {
@@ -61,21 +62,16 @@ class Game {
           sin(this.playerOne.carSprite.rotation) * this.playerOne.velocity;
         this.playerOne.carSprite.position.y -=
           cos(this.playerOne.carSprite.rotation) * this.playerOne.velocity;
+        // rotate left
+        if (keyDown(37)) this.playerOne.carSprite.rotation -= 5;
+        // rotate right
+        if (keyDown(39)) this.playerOne.carSprite.rotation += 5;
       }
       if (keyDown(40)) {
         this.playerOne.carSprite.position.x +=
           sin(this.playerOne.carSprite.rotation) * -this.playerOne.velocity;
         this.playerOne.carSprite.position.y -=
           cos(this.playerOne.carSprite.rotation) * -this.playerOne.velocity;
-      }
-      if (keyDown(38)) {
-        // rotate left
-        if (keyDown(37)) this.playerOne.carSprite.rotation -= 5;
-        // rotate right
-        if (keyDown(39)) this.playerOne.carSprite.rotation += 5;
-      }
-
-      if (keyDown(40)) {
         // rotate left
         if (keyDown(37)) this.playerOne.carSprite.rotation += 5;
         // rotate right
@@ -113,15 +109,6 @@ class Game {
           sin(this.playerTwo.carSprite.rotation) * this.playerTwo.velocity;
         this.playerTwo.carSprite.position.y -=
           cos(this.playerTwo.carSprite.rotation) * this.playerTwo.velocity;
-      }
-
-      if (keyDown(83)) {
-        this.playerTwo.carSprite.position.x +=
-          sin(this.playerTwo.carSprite.rotation) * -this.playerTwo.velocity;
-        this.playerTwo.carSprite.position.y -=
-          cos(this.playerTwo.carSprite.rotation) * -this.playerTwo.velocity;
-      }
-      if (keyDown(87)) {
         // rotate left
         if (keyDown(65)) this.playerTwo.carSprite.rotation -= 5;
         // rotate right
@@ -129,6 +116,11 @@ class Game {
       }
 
       if (keyDown(83)) {
+        this.playerTwo.carSprite.position.x +=
+          sin(this.playerTwo.carSprite.rotation) * -this.playerTwo.velocity;
+        this.playerTwo.carSprite.position.y -=
+          cos(this.playerTwo.carSprite.rotation) * -this.playerTwo.velocity;
+        // rotate left
         if (keyDown(65)) this.playerTwo.carSprite.rotation += 5;
 
         // rotate right
@@ -142,9 +134,6 @@ class Game {
       ) {
         console.log("----P2 START----");
         this.startTime.push(frameCount);
-        // this.obstacle.start.visible = false;
-
-        // console.log(this.startTime);
       }
       if (
         this.obstacle.start.overlap(this.playerTwo.carSprite) &&
