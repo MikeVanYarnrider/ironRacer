@@ -5,7 +5,7 @@ class Background {
   }
 
   preload() {
-    this.soilImg = loadImage("../assets/soil450x300.png");
+    this.soilImg = loadImage("ironRacer/assets/soil450x300.png");
   }
 
   draw() {

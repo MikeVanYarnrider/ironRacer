@@ -5,16 +5,16 @@ class Obstacles {
     this.yObstacle = 100;
   }
   preload() {
-    this.tribunesImg1 = loadImage("../assets/tribunes400x200.png");
-    this.tribunesImg2 = loadImage("../assets/tribunes200x400.png");
-    this.tribunesImg3 = loadImage("../assets/grass150x100.png");
-    this.startImg = loadImage("../assets/start.png");
-    this.borderTopImg = loadImage("../assets/borderTop.png");
-    this.borderBottomImg = loadImage("../assets/borderBottom.png");
-    this.borderLeftImg = loadImage("../assets/borderLeft.png");
-    this.borderRightImg = loadImage("../assets/borderRight.png");
-    this.oilImg = loadImage("../assets/oil.png");
-    this.boostImg = loadImage("../assets/arrow_yellow.png");
+    this.tribunesImg1 = loadImage("ironRacer/assets/tribunes400x200.png");
+    this.tribunesImg2 = loadImage("ironRacer/assets/tribunes200x400.png");
+    this.tribunesImg3 = loadImage("ironRacer/assets/grass150x100.png");
+    this.startImg = loadImage("ironRacer/assets/start.png");
+    this.borderTopImg = loadImage("ironRacer/assets/borderTop.png");
+    this.borderBottomImg = loadImage("ironRacer/assets/borderBottom.png");
+    this.borderLeftImg = loadImage("ironRacer/assets/borderLeft.png");
+    this.borderRightImg = loadImage("ironRacer/assets/borderRight.png");
+    this.oilImg = loadImage("ironRacer/assets/oil.png");
+    this.boostImg = loadImage("ironRacer/assets/arrow_yellow.png");
     // console.log("draw tribunes");
   }
 

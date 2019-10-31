@@ -13,7 +13,7 @@ class Player {
   setup() {
     if (this.playerId === 1) {
       // player 1 car sprite setup
-      this.carImg = loadImage("../assets/car1.png");
+      this.carImg = loadImage("ironRacer/assets/car1.png");
       this.carSprite = createSprite(390, 0, 50, 50);
       this.carSprite.addImage("p1", this.carImg);
       this.carSprite.setCollider("rectangle", 0, 0, 15, 30);
@@ -22,7 +22,7 @@ class Player {
 
     if (this.playerId === 2) {
       // player 2 car sprite setup
-      this.carImg = loadImage("../assets/car2.png");
+      this.carImg = loadImage("ironRacer/assets/car2.png");
       this.carSprite = createSprite(350, 0, 50, 50);
       this.carSprite.addImage("p2", this.carImg);
       this.carSprite.setCollider("rectangle", 0, 0, 15, 30);
